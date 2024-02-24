@@ -1,0 +1,12 @@
+  int char = 0;
+  str text = '';
+
+  print('What is your name? ');
+  read(char);
+  while (char > 0) {
+      text = text + char;
+      read(char);
+  }
+  print('Hello, ');
+  print(text);
+  print('!');
