@@ -8,7 +8,7 @@ in_source: |-
   }
   print(text);
 in_stdin: |-
-  abc
+  killme
 out_code: |-
   [{"index": 0, "opcode": "Opcode.LD", "arg1": "#", "arg2": 0},
   {"index": 1, "opcode": "Opcode.PUSH", "arg1": null, "arg2": null},
@@ -48,122 +48,275 @@ out_code: |-
   {"index": 35, "opcode": "Opcode.JUMP", "arg1": "#", "arg2": 28},
   {"index": 36, "opcode": "Opcode.POP", "arg1": null, "arg2": null},
   {"index": 37, "opcode": "Opcode.HALT", "arg1": null, "arg2": null}]
-
 out_stdout: |-
-  abc
+  killme
 out_log: |-
-  INFO    processor:simulation    Simulation start
-  INFO    controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:          3 | IP:          1 | DR          0 | AR:          0 | ACC:          0 | SP:       8095
-  INFO    controlunit:microcode_handler INSTRUCTION     Opcode.PUSH | TICK:          6 | IP:          2 | DR          0 | AR:          0 | ACC:          0 | SP:       8094
-  INFO    controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:          9 | IP:          3 | DR       4097 | AR:          0 | ACC:       4097 | SP:       8094
-  INFO    controlunit:microcode_handler INSTRUCTION     Opcode.PUSH | TICK:         12 | IP:          4 | DR       4097 | AR:          0 | ACC:       4097 | SP:       8093
-  INFO    controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:         15 | IP:          5 | DR          0 | AR:          0 | ACC:          0 | SP:       8093
-  INFO    controlunit:microcode_handler INSTRUCTION       Opcode.ST | TICK:         19 | IP:          6 | DR          0 | AR:       4097 | ACC:          0 | SP:       8093
-  DEBUG   datapath:get_char_from_device INPUT-> a
-  INFO    controlunit:microcode_handler INSTRUCTION     Opcode.READ | TICK:         23 | IP:          7 | DR          0 | AR:       4097 | ACC:         97 | SP:       8093
-  INFO    controlunit:microcode_handler INSTRUCTION       Opcode.ST | TICK:         27 | IP:          8 | DR          0 | AR:       8095 | ACC:         97 | SP:       8093
-  INFO    controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:         31 | IP:          9 | DR         97 | AR:       8095 | ACC:         97 | SP:       8093
-  INFO    controlunit:microcode_handler INSTRUCTION      Opcode.CMP | TICK:         34 | IP:         10 | DR          0 | AR:       8095 | ACC:         97 | SP:       8093
-  INFO    controlunit:microcode_handler INSTRUCTION       Opcode.JB | TICK:         37 | IP:         11 | DR         26 | AR:       8095 | ACC:         97 | SP:       8093
-  INFO    controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:         40 | IP:         12 | DR       4097 | AR:       8095 | ACC:       4097 | SP:       8093
-  INFO    controlunit:microcode_handler INSTRUCTION     Opcode.PUSH | TICK:         43 | IP:         13 | DR       4097 | AR:       8095 | ACC:       4097 | SP:       8092
-  INFO    controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:         48 | IP:         14 | DR          0 | AR:       4097 | ACC:          0 | SP:       8092
-  INFO    controlunit:microcode_handler INSTRUCTION      Opcode.CMP | TICK:         51 | IP:         15 | DR          0 | AR:       4097 | ACC:          0 | SP:       8092
-  INFO    controlunit:microcode_handler INSTRUCTION       Opcode.JE | TICK:         55 | IP:         20 | DR         20 | AR:       4097 | ACC:          0 | SP:       8092
-  INFO    controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:         59 | IP:         21 | DR         97 | AR:       8095 | ACC:         97 | SP:       8092
-  INFO    controlunit:microcode_handler INSTRUCTION       Opcode.ST | TICK:         64 | IP:         22 | DR          0 | AR:       4097 | ACC:         97 | SP:       8092
-  INFO    controlunit:microcode_handler INSTRUCTION      Opcode.POP | TICK:         69 | IP:         23 | DR       4097 | AR:       4097 | ACC:       4097 | SP:       8093
-  DEBUG   datapath:get_char_from_device INPUT-> b
-  INFO    controlunit:microcode_handler INSTRUCTION     Opcode.READ | TICK:         73 | IP:         24 | DR       4097 | AR:       4097 | ACC:         98 | SP:       8093
-  INFO    controlunit:microcode_handler INSTRUCTION       Opcode.ST | TICK:         77 | IP:         25 | DR         97 | AR:       8095 | ACC:         98 | SP:       8093
-  INFO    controlunit:microcode_handler INSTRUCTION     Opcode.JUMP | TICK:         80 | IP:          8 | DR          8 | AR:       8095 | ACC:         98 | SP:       8093
-  INFO    controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:         84 | IP:          9 | DR         98 | AR:       8095 | ACC:         98 | SP:       8093
-  INFO    controlunit:microcode_handler INSTRUCTION      Opcode.CMP | TICK:         87 | IP:         10 | DR          0 | AR:       8095 | ACC:         98 | SP:       8093
-  INFO    controlunit:microcode_handler INSTRUCTION       Opcode.JB | TICK:         90 | IP:         11 | DR         26 | AR:       8095 | ACC:         98 | SP:       8093
-  INFO    controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:         93 | IP:         12 | DR       4097 | AR:       8095 | ACC:       4097 | SP:       8093
-  INFO    controlunit:microcode_handler INSTRUCTION     Opcode.PUSH | TICK:         96 | IP:         13 | DR       4097 | AR:       8095 | ACC:       4097 | SP:       8092
-  INFO    controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:        101 | IP:         14 | DR         97 | AR:       4097 | ACC:         97 | SP:       8092
-  INFO    controlunit:microcode_handler INSTRUCTION      Opcode.CMP | TICK:        104 | IP:         15 | DR          0 | AR:       4097 | ACC:         97 | SP:       8092
-  INFO    controlunit:microcode_handler INSTRUCTION       Opcode.JE | TICK:        107 | IP:         16 | DR         20 | AR:       4097 | ACC:         97 | SP:       8092
-  INFO    controlunit:microcode_handler INSTRUCTION      Opcode.POP | TICK:        112 | IP:         17 | DR       4097 | AR:       4097 | ACC:       4097 | SP:       8093
-  INFO    controlunit:microcode_handler INSTRUCTION      Opcode.INC | TICK:        115 | IP:         18 | DR       4097 | AR:       4097 | ACC:       4098 | SP:       8093
-  INFO    controlunit:microcode_handler INSTRUCTION     Opcode.PUSH | TICK:        118 | IP:         19 | DR       4097 | AR:       4097 | ACC:       4098 | SP:       8092
-  INFO    controlunit:microcode_handler INSTRUCTION     Opcode.JUMP | TICK:        121 | IP:         13 | DR         13 | AR:       4097 | ACC:       4098 | SP:       8092
-  INFO    controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:        126 | IP:         14 | DR          0 | AR:       4098 | ACC:          0 | SP:       8092
-  INFO    controlunit:microcode_handler INSTRUCTION      Opcode.CMP | TICK:        129 | IP:         15 | DR          0 | AR:       4098 | ACC:          0 | SP:       8092
-  INFO    controlunit:microcode_handler INSTRUCTION       Opcode.JE | TICK:        133 | IP:         20 | DR         20 | AR:       4098 | ACC:          0 | SP:       8092
-  INFO    controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:        137 | IP:         21 | DR         98 | AR:       8095 | ACC:         98 | SP:       8092
-  INFO    controlunit:microcode_handler INSTRUCTION       Opcode.ST | TICK:        142 | IP:         22 | DR          0 | AR:       4098 | ACC:         98 | SP:       8092
-  INFO    controlunit:microcode_handler INSTRUCTION      Opcode.POP | TICK:        147 | IP:         23 | DR       4098 | AR:       4098 | ACC:       4098 | SP:       8093
-  DEBUG   datapath:get_char_from_device INPUT-> c
-  INFO    controlunit:microcode_handler INSTRUCTION     Opcode.READ | TICK:        151 | IP:         24 | DR       4098 | AR:       4098 | ACC:         99 | SP:       8093
-  INFO    controlunit:microcode_handler INSTRUCTION       Opcode.ST | TICK:        155 | IP:         25 | DR         98 | AR:       8095 | ACC:         99 | SP:       8093
-  INFO    controlunit:microcode_handler INSTRUCTION     Opcode.JUMP | TICK:        158 | IP:          8 | DR          8 | AR:       8095 | ACC:         99 | SP:       8093
-  INFO    controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:        162 | IP:          9 | DR         99 | AR:       8095 | ACC:         99 | SP:       8093
-  INFO    controlunit:microcode_handler INSTRUCTION      Opcode.CMP | TICK:        165 | IP:         10 | DR          0 | AR:       8095 | ACC:         99 | SP:       8093
-  INFO    controlunit:microcode_handler INSTRUCTION       Opcode.JB | TICK:        168 | IP:         11 | DR         26 | AR:       8095 | ACC:         99 | SP:       8093
-  INFO    controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:        171 | IP:         12 | DR       4097 | AR:       8095 | ACC:       4097 | SP:       8093
-  INFO    controlunit:microcode_handler INSTRUCTION     Opcode.PUSH | TICK:        174 | IP:         13 | DR       4097 | AR:       8095 | ACC:       4097 | SP:       8092
-  INFO    controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:        179 | IP:         14 | DR         97 | AR:       4097 | ACC:         97 | SP:       8092
-  INFO    controlunit:microcode_handler INSTRUCTION      Opcode.CMP | TICK:        182 | IP:         15 | DR          0 | AR:       4097 | ACC:         97 | SP:       8092
-  INFO    controlunit:microcode_handler INSTRUCTION       Opcode.JE | TICK:        185 | IP:         16 | DR         20 | AR:       4097 | ACC:         97 | SP:       8092
-  INFO    controlunit:microcode_handler INSTRUCTION      Opcode.POP | TICK:        190 | IP:         17 | DR       4097 | AR:       4097 | ACC:       4097 | SP:       8093
-  INFO    controlunit:microcode_handler INSTRUCTION      Opcode.INC | TICK:        193 | IP:         18 | DR       4097 | AR:       4097 | ACC:       4098 | SP:       8093
-  INFO    controlunit:microcode_handler INSTRUCTION     Opcode.PUSH | TICK:        196 | IP:         19 | DR       4097 | AR:       4097 | ACC:       4098 | SP:       8092
-  INFO    controlunit:microcode_handler INSTRUCTION     Opcode.JUMP | TICK:        199 | IP:         13 | DR         13 | AR:       4097 | ACC:       4098 | SP:       8092
-  INFO    controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:        204 | IP:         14 | DR         98 | AR:       4098 | ACC:         98 | SP:       8092
-  INFO    controlunit:microcode_handler INSTRUCTION      Opcode.CMP | TICK:        207 | IP:         15 | DR          0 | AR:       4098 | ACC:         98 | SP:       8092
-  INFO    controlunit:microcode_handler INSTRUCTION       Opcode.JE | TICK:        210 | IP:         16 | DR         20 | AR:       4098 | ACC:         98 | SP:       8092
-  INFO    controlunit:microcode_handler INSTRUCTION      Opcode.POP | TICK:        215 | IP:         17 | DR       4098 | AR:       4098 | ACC:       4098 | SP:       8093
-  INFO    controlunit:microcode_handler INSTRUCTION      Opcode.INC | TICK:        218 | IP:         18 | DR       4098 | AR:       4098 | ACC:       4099 | SP:       8093
-  INFO    controlunit:microcode_handler INSTRUCTION     Opcode.PUSH | TICK:        221 | IP:         19 | DR       4098 | AR:       4098 | ACC:       4099 | SP:       8092
-  INFO    controlunit:microcode_handler INSTRUCTION     Opcode.JUMP | TICK:        224 | IP:         13 | DR         13 | AR:       4098 | ACC:       4099 | SP:       8092
-  INFO    controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:        229 | IP:         14 | DR          0 | AR:       4099 | ACC:          0 | SP:       8092
-  INFO    controlunit:microcode_handler INSTRUCTION      Opcode.CMP | TICK:        232 | IP:         15 | DR          0 | AR:       4099 | ACC:          0 | SP:       8092
-  INFO    controlunit:microcode_handler INSTRUCTION       Opcode.JE | TICK:        236 | IP:         20 | DR         20 | AR:       4099 | ACC:          0 | SP:       8092
-  INFO    controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:        240 | IP:         21 | DR         99 | AR:       8095 | ACC:         99 | SP:       8092
-  INFO    controlunit:microcode_handler INSTRUCTION       Opcode.ST | TICK:        245 | IP:         22 | DR          0 | AR:       4099 | ACC:         99 | SP:       8092
-  INFO    controlunit:microcode_handler INSTRUCTION      Opcode.POP | TICK:        250 | IP:         23 | DR       4099 | AR:       4099 | ACC:       4099 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:          3 | IP:          1 | DR          0 | AR:          0 | ACC:          0 | SP:       8095
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.PUSH | TICK:          6 | IP:          2 | DR          0 | AR:          0 | ACC:          0 | SP:       8094
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:          9 | IP:          3 | DR       4097 | AR:          0 | ACC:       4097 | SP:       8094
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.PUSH | TICK:         12 | IP:          4 | DR       4097 | AR:          0 | ACC:       4097 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:         15 | IP:          5 | DR          0 | AR:          0 | ACC:          0 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.ST | TICK:         19 | IP:          6 | DR          0 | AR:       4097 | ACC:          0 | SP:       8093
+  DEBUG   datapath:get_char_from_device INPUT-> k
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.READ | TICK:         23 | IP:          7 | DR          0 | AR:       4097 | ACC:        107 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.ST | TICK:         27 | IP:          8 | DR          0 | AR:       8095 | ACC:        107 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:         31 | IP:          9 | DR        107 | AR:       8095 | ACC:        107 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.CMP | TICK:         34 | IP:         10 | DR          0 | AR:       8095 | ACC:        107 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.JB | TICK:         37 | IP:         11 | DR         26 | AR:       8095 | ACC:        107 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:         40 | IP:         12 | DR       4097 | AR:       8095 | ACC:       4097 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.PUSH | TICK:         43 | IP:         13 | DR       4097 | AR:       8095 | ACC:       4097 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:         48 | IP:         14 | DR          0 | AR:       4097 | ACC:          0 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.CMP | TICK:         51 | IP:         15 | DR          0 | AR:       4097 | ACC:          0 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.JE | TICK:         55 | IP:         20 | DR         20 | AR:       4097 | ACC:          0 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:         59 | IP:         21 | DR        107 | AR:       8095 | ACC:        107 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.ST | TICK:         64 | IP:         22 | DR          0 | AR:       4097 | ACC:        107 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.POP | TICK:         69 | IP:         23 | DR       4097 | AR:       4097 | ACC:       4097 | SP:       8093
+  DEBUG   datapath:get_char_from_device INPUT-> i
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.READ | TICK:         73 | IP:         24 | DR       4097 | AR:       4097 | ACC:        105 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.ST | TICK:         77 | IP:         25 | DR        107 | AR:       8095 | ACC:        105 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.JUMP | TICK:         80 | IP:          8 | DR          8 | AR:       8095 | ACC:        105 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:         84 | IP:          9 | DR        105 | AR:       8095 | ACC:        105 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.CMP | TICK:         87 | IP:         10 | DR          0 | AR:       8095 | ACC:        105 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.JB | TICK:         90 | IP:         11 | DR         26 | AR:       8095 | ACC:        105 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:         93 | IP:         12 | DR       4097 | AR:       8095 | ACC:       4097 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.PUSH | TICK:         96 | IP:         13 | DR       4097 | AR:       8095 | ACC:       4097 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:        101 | IP:         14 | DR        107 | AR:       4097 | ACC:        107 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.CMP | TICK:        104 | IP:         15 | DR          0 | AR:       4097 | ACC:        107 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.JE | TICK:        107 | IP:         16 | DR         20 | AR:       4097 | ACC:        107 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.POP | TICK:        112 | IP:         17 | DR       4097 | AR:       4097 | ACC:       4097 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.INC | TICK:        115 | IP:         18 | DR       4097 | AR:       4097 | ACC:       4098 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.PUSH | TICK:        118 | IP:         19 | DR       4097 | AR:       4097 | ACC:       4098 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.JUMP | TICK:        121 | IP:         13 | DR         13 | AR:       4097 | ACC:       4098 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:        126 | IP:         14 | DR          0 | AR:       4098 | ACC:          0 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.CMP | TICK:        129 | IP:         15 | DR          0 | AR:       4098 | ACC:          0 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.JE | TICK:        133 | IP:         20 | DR         20 | AR:       4098 | ACC:          0 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:        137 | IP:         21 | DR        105 | AR:       8095 | ACC:        105 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.ST | TICK:        142 | IP:         22 | DR          0 | AR:       4098 | ACC:        105 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.POP | TICK:        147 | IP:         23 | DR       4098 | AR:       4098 | ACC:       4098 | SP:       8093
+  DEBUG   datapath:get_char_from_device INPUT-> l
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.READ | TICK:        151 | IP:         24 | DR       4098 | AR:       4098 | ACC:        108 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.ST | TICK:        155 | IP:         25 | DR        105 | AR:       8095 | ACC:        108 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.JUMP | TICK:        158 | IP:          8 | DR          8 | AR:       8095 | ACC:        108 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:        162 | IP:          9 | DR        108 | AR:       8095 | ACC:        108 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.CMP | TICK:        165 | IP:         10 | DR          0 | AR:       8095 | ACC:        108 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.JB | TICK:        168 | IP:         11 | DR         26 | AR:       8095 | ACC:        108 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:        171 | IP:         12 | DR       4097 | AR:       8095 | ACC:       4097 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.PUSH | TICK:        174 | IP:         13 | DR       4097 | AR:       8095 | ACC:       4097 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:        179 | IP:         14 | DR        107 | AR:       4097 | ACC:        107 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.CMP | TICK:        182 | IP:         15 | DR          0 | AR:       4097 | ACC:        107 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.JE | TICK:        185 | IP:         16 | DR         20 | AR:       4097 | ACC:        107 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.POP | TICK:        190 | IP:         17 | DR       4097 | AR:       4097 | ACC:       4097 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.INC | TICK:        193 | IP:         18 | DR       4097 | AR:       4097 | ACC:       4098 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.PUSH | TICK:        196 | IP:         19 | DR       4097 | AR:       4097 | ACC:       4098 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.JUMP | TICK:        199 | IP:         13 | DR         13 | AR:       4097 | ACC:       4098 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:        204 | IP:         14 | DR        105 | AR:       4098 | ACC:        105 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.CMP | TICK:        207 | IP:         15 | DR          0 | AR:       4098 | ACC:        105 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.JE | TICK:        210 | IP:         16 | DR         20 | AR:       4098 | ACC:        105 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.POP | TICK:        215 | IP:         17 | DR       4098 | AR:       4098 | ACC:       4098 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.INC | TICK:        218 | IP:         18 | DR       4098 | AR:       4098 | ACC:       4099 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.PUSH | TICK:        221 | IP:         19 | DR       4098 | AR:       4098 | ACC:       4099 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.JUMP | TICK:        224 | IP:         13 | DR         13 | AR:       4098 | ACC:       4099 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:        229 | IP:         14 | DR          0 | AR:       4099 | ACC:          0 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.CMP | TICK:        232 | IP:         15 | DR          0 | AR:       4099 | ACC:          0 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.JE | TICK:        236 | IP:         20 | DR         20 | AR:       4099 | ACC:          0 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:        240 | IP:         21 | DR        108 | AR:       8095 | ACC:        108 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.ST | TICK:        245 | IP:         22 | DR          0 | AR:       4099 | ACC:        108 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.POP | TICK:        250 | IP:         23 | DR       4099 | AR:       4099 | ACC:       4099 | SP:       8093
+  DEBUG   datapath:get_char_from_device INPUT-> l
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.READ | TICK:        254 | IP:         24 | DR       4099 | AR:       4099 | ACC:        108 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.ST | TICK:        258 | IP:         25 | DR        108 | AR:       8095 | ACC:        108 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.JUMP | TICK:        261 | IP:          8 | DR          8 | AR:       8095 | ACC:        108 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:        265 | IP:          9 | DR        108 | AR:       8095 | ACC:        108 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.CMP | TICK:        268 | IP:         10 | DR          0 | AR:       8095 | ACC:        108 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.JB | TICK:        271 | IP:         11 | DR         26 | AR:       8095 | ACC:        108 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:        274 | IP:         12 | DR       4097 | AR:       8095 | ACC:       4097 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.PUSH | TICK:        277 | IP:         13 | DR       4097 | AR:       8095 | ACC:       4097 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:        282 | IP:         14 | DR        107 | AR:       4097 | ACC:        107 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.CMP | TICK:        285 | IP:         15 | DR          0 | AR:       4097 | ACC:        107 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.JE | TICK:        288 | IP:         16 | DR         20 | AR:       4097 | ACC:        107 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.POP | TICK:        293 | IP:         17 | DR       4097 | AR:       4097 | ACC:       4097 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.INC | TICK:        296 | IP:         18 | DR       4097 | AR:       4097 | ACC:       4098 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.PUSH | TICK:        299 | IP:         19 | DR       4097 | AR:       4097 | ACC:       4098 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.JUMP | TICK:        302 | IP:         13 | DR         13 | AR:       4097 | ACC:       4098 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:        307 | IP:         14 | DR        105 | AR:       4098 | ACC:        105 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.CMP | TICK:        310 | IP:         15 | DR          0 | AR:       4098 | ACC:        105 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.JE | TICK:        313 | IP:         16 | DR         20 | AR:       4098 | ACC:        105 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.POP | TICK:        318 | IP:         17 | DR       4098 | AR:       4098 | ACC:       4098 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.INC | TICK:        321 | IP:         18 | DR       4098 | AR:       4098 | ACC:       4099 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.PUSH | TICK:        324 | IP:         19 | DR       4098 | AR:       4098 | ACC:       4099 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.JUMP | TICK:        327 | IP:         13 | DR         13 | AR:       4098 | ACC:       4099 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:        332 | IP:         14 | DR        108 | AR:       4099 | ACC:        108 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.CMP | TICK:        335 | IP:         15 | DR          0 | AR:       4099 | ACC:        108 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.JE | TICK:        338 | IP:         16 | DR         20 | AR:       4099 | ACC:        108 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.POP | TICK:        343 | IP:         17 | DR       4099 | AR:       4099 | ACC:       4099 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.INC | TICK:        346 | IP:         18 | DR       4099 | AR:       4099 | ACC:       4100 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.PUSH | TICK:        349 | IP:         19 | DR       4099 | AR:       4099 | ACC:       4100 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.JUMP | TICK:        352 | IP:         13 | DR         13 | AR:       4099 | ACC:       4100 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:        357 | IP:         14 | DR          0 | AR:       4100 | ACC:          0 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.CMP | TICK:        360 | IP:         15 | DR          0 | AR:       4100 | ACC:          0 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.JE | TICK:        364 | IP:         20 | DR         20 | AR:       4100 | ACC:          0 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:        368 | IP:         21 | DR        108 | AR:       8095 | ACC:        108 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.ST | TICK:        373 | IP:         22 | DR          0 | AR:       4100 | ACC:        108 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.POP | TICK:        378 | IP:         23 | DR       4100 | AR:       4100 | ACC:       4100 | SP:       8093
+  DEBUG   datapath:get_char_from_device INPUT-> m
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.READ | TICK:        382 | IP:         24 | DR       4100 | AR:       4100 | ACC:        109 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.ST | TICK:        386 | IP:         25 | DR        108 | AR:       8095 | ACC:        109 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.JUMP | TICK:        389 | IP:          8 | DR          8 | AR:       8095 | ACC:        109 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:        393 | IP:          9 | DR        109 | AR:       8095 | ACC:        109 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.CMP | TICK:        396 | IP:         10 | DR          0 | AR:       8095 | ACC:        109 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.JB | TICK:        399 | IP:         11 | DR         26 | AR:       8095 | ACC:        109 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:        402 | IP:         12 | DR       4097 | AR:       8095 | ACC:       4097 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.PUSH | TICK:        405 | IP:         13 | DR       4097 | AR:       8095 | ACC:       4097 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:        410 | IP:         14 | DR        107 | AR:       4097 | ACC:        107 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.CMP | TICK:        413 | IP:         15 | DR          0 | AR:       4097 | ACC:        107 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.JE | TICK:        416 | IP:         16 | DR         20 | AR:       4097 | ACC:        107 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.POP | TICK:        421 | IP:         17 | DR       4097 | AR:       4097 | ACC:       4097 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.INC | TICK:        424 | IP:         18 | DR       4097 | AR:       4097 | ACC:       4098 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.PUSH | TICK:        427 | IP:         19 | DR       4097 | AR:       4097 | ACC:       4098 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.JUMP | TICK:        430 | IP:         13 | DR         13 | AR:       4097 | ACC:       4098 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:        435 | IP:         14 | DR        105 | AR:       4098 | ACC:        105 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.CMP | TICK:        438 | IP:         15 | DR          0 | AR:       4098 | ACC:        105 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.JE | TICK:        441 | IP:         16 | DR         20 | AR:       4098 | ACC:        105 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.POP | TICK:        446 | IP:         17 | DR       4098 | AR:       4098 | ACC:       4098 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.INC | TICK:        449 | IP:         18 | DR       4098 | AR:       4098 | ACC:       4099 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.PUSH | TICK:        452 | IP:         19 | DR       4098 | AR:       4098 | ACC:       4099 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.JUMP | TICK:        455 | IP:         13 | DR         13 | AR:       4098 | ACC:       4099 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:        460 | IP:         14 | DR        108 | AR:       4099 | ACC:        108 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.CMP | TICK:        463 | IP:         15 | DR          0 | AR:       4099 | ACC:        108 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.JE | TICK:        466 | IP:         16 | DR         20 | AR:       4099 | ACC:        108 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.POP | TICK:        471 | IP:         17 | DR       4099 | AR:       4099 | ACC:       4099 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.INC | TICK:        474 | IP:         18 | DR       4099 | AR:       4099 | ACC:       4100 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.PUSH | TICK:        477 | IP:         19 | DR       4099 | AR:       4099 | ACC:       4100 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.JUMP | TICK:        480 | IP:         13 | DR         13 | AR:       4099 | ACC:       4100 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:        485 | IP:         14 | DR        108 | AR:       4100 | ACC:        108 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.CMP | TICK:        488 | IP:         15 | DR          0 | AR:       4100 | ACC:        108 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.JE | TICK:        491 | IP:         16 | DR         20 | AR:       4100 | ACC:        108 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.POP | TICK:        496 | IP:         17 | DR       4100 | AR:       4100 | ACC:       4100 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.INC | TICK:        499 | IP:         18 | DR       4100 | AR:       4100 | ACC:       4101 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.PUSH | TICK:        502 | IP:         19 | DR       4100 | AR:       4100 | ACC:       4101 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.JUMP | TICK:        505 | IP:         13 | DR         13 | AR:       4100 | ACC:       4101 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:        510 | IP:         14 | DR          0 | AR:       4101 | ACC:          0 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.CMP | TICK:        513 | IP:         15 | DR          0 | AR:       4101 | ACC:          0 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.JE | TICK:        517 | IP:         20 | DR         20 | AR:       4101 | ACC:          0 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:        521 | IP:         21 | DR        109 | AR:       8095 | ACC:        109 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.ST | TICK:        526 | IP:         22 | DR          0 | AR:       4101 | ACC:        109 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.POP | TICK:        531 | IP:         23 | DR       4101 | AR:       4101 | ACC:       4101 | SP:       8093
+  DEBUG   datapath:get_char_from_device INPUT-> e
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.READ | TICK:        535 | IP:         24 | DR       4101 | AR:       4101 | ACC:        101 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.ST | TICK:        539 | IP:         25 | DR        109 | AR:       8095 | ACC:        101 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.JUMP | TICK:        542 | IP:          8 | DR          8 | AR:       8095 | ACC:        101 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:        546 | IP:          9 | DR        101 | AR:       8095 | ACC:        101 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.CMP | TICK:        549 | IP:         10 | DR          0 | AR:       8095 | ACC:        101 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.JB | TICK:        552 | IP:         11 | DR         26 | AR:       8095 | ACC:        101 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:        555 | IP:         12 | DR       4097 | AR:       8095 | ACC:       4097 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.PUSH | TICK:        558 | IP:         13 | DR       4097 | AR:       8095 | ACC:       4097 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:        563 | IP:         14 | DR        107 | AR:       4097 | ACC:        107 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.CMP | TICK:        566 | IP:         15 | DR          0 | AR:       4097 | ACC:        107 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.JE | TICK:        569 | IP:         16 | DR         20 | AR:       4097 | ACC:        107 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.POP | TICK:        574 | IP:         17 | DR       4097 | AR:       4097 | ACC:       4097 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.INC | TICK:        577 | IP:         18 | DR       4097 | AR:       4097 | ACC:       4098 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.PUSH | TICK:        580 | IP:         19 | DR       4097 | AR:       4097 | ACC:       4098 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.JUMP | TICK:        583 | IP:         13 | DR         13 | AR:       4097 | ACC:       4098 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:        588 | IP:         14 | DR        105 | AR:       4098 | ACC:        105 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.CMP | TICK:        591 | IP:         15 | DR          0 | AR:       4098 | ACC:        105 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.JE | TICK:        594 | IP:         16 | DR         20 | AR:       4098 | ACC:        105 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.POP | TICK:        599 | IP:         17 | DR       4098 | AR:       4098 | ACC:       4098 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.INC | TICK:        602 | IP:         18 | DR       4098 | AR:       4098 | ACC:       4099 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.PUSH | TICK:        605 | IP:         19 | DR       4098 | AR:       4098 | ACC:       4099 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.JUMP | TICK:        608 | IP:         13 | DR         13 | AR:       4098 | ACC:       4099 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:        613 | IP:         14 | DR        108 | AR:       4099 | ACC:        108 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.CMP | TICK:        616 | IP:         15 | DR          0 | AR:       4099 | ACC:        108 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.JE | TICK:        619 | IP:         16 | DR         20 | AR:       4099 | ACC:        108 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.POP | TICK:        624 | IP:         17 | DR       4099 | AR:       4099 | ACC:       4099 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.INC | TICK:        627 | IP:         18 | DR       4099 | AR:       4099 | ACC:       4100 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.PUSH | TICK:        630 | IP:         19 | DR       4099 | AR:       4099 | ACC:       4100 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.JUMP | TICK:        633 | IP:         13 | DR         13 | AR:       4099 | ACC:       4100 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:        638 | IP:         14 | DR        108 | AR:       4100 | ACC:        108 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.CMP | TICK:        641 | IP:         15 | DR          0 | AR:       4100 | ACC:        108 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.JE | TICK:        644 | IP:         16 | DR         20 | AR:       4100 | ACC:        108 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.POP | TICK:        649 | IP:         17 | DR       4100 | AR:       4100 | ACC:       4100 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.INC | TICK:        652 | IP:         18 | DR       4100 | AR:       4100 | ACC:       4101 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.PUSH | TICK:        655 | IP:         19 | DR       4100 | AR:       4100 | ACC:       4101 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.JUMP | TICK:        658 | IP:         13 | DR         13 | AR:       4100 | ACC:       4101 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:        663 | IP:         14 | DR        109 | AR:       4101 | ACC:        109 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.CMP | TICK:        666 | IP:         15 | DR          0 | AR:       4101 | ACC:        109 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.JE | TICK:        669 | IP:         16 | DR         20 | AR:       4101 | ACC:        109 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.POP | TICK:        674 | IP:         17 | DR       4101 | AR:       4101 | ACC:       4101 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.INC | TICK:        677 | IP:         18 | DR       4101 | AR:       4101 | ACC:       4102 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.PUSH | TICK:        680 | IP:         19 | DR       4101 | AR:       4101 | ACC:       4102 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.JUMP | TICK:        683 | IP:         13 | DR         13 | AR:       4101 | ACC:       4102 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:        688 | IP:         14 | DR          0 | AR:       4102 | ACC:          0 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.CMP | TICK:        691 | IP:         15 | DR          0 | AR:       4102 | ACC:          0 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.JE | TICK:        695 | IP:         20 | DR         20 | AR:       4102 | ACC:          0 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:        699 | IP:         21 | DR        101 | AR:       8095 | ACC:        101 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.ST | TICK:        704 | IP:         22 | DR          0 | AR:       4102 | ACC:        101 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.POP | TICK:        709 | IP:         23 | DR       4102 | AR:       4102 | ACC:       4102 | SP:       8093
   DEBUG   datapath:get_char_from_device INPUT 0
-  INFO    controlunit:microcode_handler INSTRUCTION     Opcode.READ | TICK:        254 | IP:         24 | DR       4099 | AR:       4099 | ACC:          0 | SP:       8093
-  INFO    controlunit:microcode_handler INSTRUCTION       Opcode.ST | TICK:        258 | IP:         25 | DR         99 | AR:       8095 | ACC:          0 | SP:       8093
-  INFO    controlunit:microcode_handler INSTRUCTION     Opcode.JUMP | TICK:        261 | IP:          8 | DR          8 | AR:       8095 | ACC:          0 | SP:       8093
-  INFO    controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:        265 | IP:          9 | DR          0 | AR:       8095 | ACC:          0 | SP:       8093
-  INFO    controlunit:microcode_handler INSTRUCTION      Opcode.CMP | TICK:        268 | IP:         10 | DR          0 | AR:       8095 | ACC:          0 | SP:       8093
-  INFO    controlunit:microcode_handler INSTRUCTION       Opcode.JB | TICK:        272 | IP:         26 | DR         26 | AR:       8095 | ACC:          0 | SP:       8093
-  INFO    controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:        275 | IP:         27 | DR       4097 | AR:       8095 | ACC:       4097 | SP:       8093
-  INFO    controlunit:microcode_handler INSTRUCTION     Opcode.PUSH | TICK:        278 | IP:         28 | DR       4097 | AR:       8095 | ACC:       4097 | SP:       8092
-  INFO    controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:        283 | IP:         29 | DR         97 | AR:       4097 | ACC:         97 | SP:       8092
-  DEBUG   datapath:output         <- a
-  INFO    controlunit:microcode_handler INSTRUCTION    Opcode.PRINT | TICK:        286 | IP:         30 | DR         97 | AR:       4097 | ACC:         97 | SP:       8092
-  INFO    controlunit:microcode_handler INSTRUCTION      Opcode.CMP | TICK:        289 | IP:         31 | DR          0 | AR:       4097 | ACC:         97 | SP:       8092
-  INFO    controlunit:microcode_handler INSTRUCTION       Opcode.JE | TICK:        292 | IP:         32 | DR         36 | AR:       4097 | ACC:         97 | SP:       8092
-  INFO    controlunit:microcode_handler INSTRUCTION      Opcode.POP | TICK:        297 | IP:         33 | DR       4097 | AR:       4097 | ACC:       4097 | SP:       8093
-  INFO    controlunit:microcode_handler INSTRUCTION      Opcode.INC | TICK:        300 | IP:         34 | DR       4097 | AR:       4097 | ACC:       4098 | SP:       8093
-  INFO    controlunit:microcode_handler INSTRUCTION     Opcode.PUSH | TICK:        303 | IP:         35 | DR       4097 | AR:       4097 | ACC:       4098 | SP:       8092
-  INFO    controlunit:microcode_handler INSTRUCTION     Opcode.JUMP | TICK:        306 | IP:         28 | DR         28 | AR:       4097 | ACC:       4098 | SP:       8092
-  INFO    controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:        311 | IP:         29 | DR         98 | AR:       4098 | ACC:         98 | SP:       8092
-  DEBUG   datapath:output        a <- b
-  INFO    controlunit:microcode_handler INSTRUCTION    Opcode.PRINT | TICK:        314 | IP:         30 | DR         98 | AR:       4098 | ACC:         98 | SP:       8092
-  INFO    controlunit:microcode_handler INSTRUCTION      Opcode.CMP | TICK:        317 | IP:         31 | DR          0 | AR:       4098 | ACC:         98 | SP:       8092
-  INFO    controlunit:microcode_handler INSTRUCTION       Opcode.JE | TICK:        320 | IP:         32 | DR         36 | AR:       4098 | ACC:         98 | SP:       8092
-  INFO    controlunit:microcode_handler INSTRUCTION      Opcode.POP | TICK:        325 | IP:         33 | DR       4098 | AR:       4098 | ACC:       4098 | SP:       8093
-  INFO    controlunit:microcode_handler INSTRUCTION      Opcode.INC | TICK:        328 | IP:         34 | DR       4098 | AR:       4098 | ACC:       4099 | SP:       8093
-  INFO    controlunit:microcode_handler INSTRUCTION     Opcode.PUSH | TICK:        331 | IP:         35 | DR       4098 | AR:       4098 | ACC:       4099 | SP:       8092
-  INFO    controlunit:microcode_handler INSTRUCTION     Opcode.JUMP | TICK:        334 | IP:         28 | DR         28 | AR:       4098 | ACC:       4099 | SP:       8092
-  INFO    controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:        339 | IP:         29 | DR         99 | AR:       4099 | ACC:         99 | SP:       8092
-  DEBUG   datapath:output        ab <- c
-  INFO    controlunit:microcode_handler INSTRUCTION    Opcode.PRINT | TICK:        342 | IP:         30 | DR         99 | AR:       4099 | ACC:         99 | SP:       8092
-  INFO    controlunit:microcode_handler INSTRUCTION      Opcode.CMP | TICK:        345 | IP:         31 | DR          0 | AR:       4099 | ACC:         99 | SP:       8092
-  INFO    controlunit:microcode_handler INSTRUCTION       Opcode.JE | TICK:        348 | IP:         32 | DR         36 | AR:       4099 | ACC:         99 | SP:       8092
-  INFO    controlunit:microcode_handler INSTRUCTION      Opcode.POP | TICK:        353 | IP:         33 | DR       4099 | AR:       4099 | ACC:       4099 | SP:       8093
-  INFO    controlunit:microcode_handler INSTRUCTION      Opcode.INC | TICK:        356 | IP:         34 | DR       4099 | AR:       4099 | ACC:       4100 | SP:       8093
-  INFO    controlunit:microcode_handler INSTRUCTION     Opcode.PUSH | TICK:        359 | IP:         35 | DR       4099 | AR:       4099 | ACC:       4100 | SP:       8092
-  INFO    controlunit:microcode_handler INSTRUCTION     Opcode.JUMP | TICK:        362 | IP:         28 | DR         28 | AR:       4099 | ACC:       4100 | SP:       8092
-  INFO    controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:        367 | IP:         29 | DR          0 | AR:       4100 | ACC:          0 | SP:       8092
-  INFO    controlunit:microcode_handler INSTRUCTION    Opcode.PRINT | TICK:        370 | IP:         30 | DR          0 | AR:       4100 | ACC:          0 | SP:       8092
-  INFO    controlunit:microcode_handler INSTRUCTION      Opcode.CMP | TICK:        373 | IP:         31 | DR          0 | AR:       4100 | ACC:          0 | SP:       8092
-  INFO    controlunit:microcode_handler INSTRUCTION       Opcode.JE | TICK:        377 | IP:         36 | DR         36 | AR:       4100 | ACC:          0 | SP:       8092
-  INFO    controlunit:microcode_handler INSTRUCTION      Opcode.POP | TICK:        382 | IP:         37 | DR       4100 | AR:       4100 | ACC:       4100 | SP:       8093
-  DEBUG   datapath:output_the_buffer output: abc
-  INFO    processor:simulation    Simulation stop
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.READ | TICK:        713 | IP:         24 | DR       4102 | AR:       4102 | ACC:          0 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.ST | TICK:        717 | IP:         25 | DR        101 | AR:       8095 | ACC:          0 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.JUMP | TICK:        720 | IP:          8 | DR          8 | AR:       8095 | ACC:          0 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:        724 | IP:          9 | DR          0 | AR:       8095 | ACC:          0 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.CMP | TICK:        727 | IP:         10 | DR          0 | AR:       8095 | ACC:          0 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.JB | TICK:        731 | IP:         26 | DR         26 | AR:       8095 | ACC:          0 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:        734 | IP:         27 | DR       4097 | AR:       8095 | ACC:       4097 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.PUSH | TICK:        737 | IP:         28 | DR       4097 | AR:       8095 | ACC:       4097 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:        742 | IP:         29 | DR        107 | AR:       4097 | ACC:        107 | SP:       8092
+  DEBUG   datapath:output         <- k
+  DEBUG   controlunit:microcode_handler INSTRUCTION    Opcode.PRINT | TICK:        745 | IP:         30 | DR        107 | AR:       4097 | ACC:        107 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.CMP | TICK:        748 | IP:         31 | DR          0 | AR:       4097 | ACC:        107 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.JE | TICK:        751 | IP:         32 | DR         36 | AR:       4097 | ACC:        107 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.POP | TICK:        756 | IP:         33 | DR       4097 | AR:       4097 | ACC:       4097 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.INC | TICK:        759 | IP:         34 | DR       4097 | AR:       4097 | ACC:       4098 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.PUSH | TICK:        762 | IP:         35 | DR       4097 | AR:       4097 | ACC:       4098 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.JUMP | TICK:        765 | IP:         28 | DR         28 | AR:       4097 | ACC:       4098 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:        770 | IP:         29 | DR        105 | AR:       4098 | ACC:        105 | SP:       8092
+  DEBUG   datapath:output        k <- i
+  DEBUG   controlunit:microcode_handler INSTRUCTION    Opcode.PRINT | TICK:        773 | IP:         30 | DR        105 | AR:       4098 | ACC:        105 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.CMP | TICK:        776 | IP:         31 | DR          0 | AR:       4098 | ACC:        105 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.JE | TICK:        779 | IP:         32 | DR         36 | AR:       4098 | ACC:        105 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.POP | TICK:        784 | IP:         33 | DR       4098 | AR:       4098 | ACC:       4098 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.INC | TICK:        787 | IP:         34 | DR       4098 | AR:       4098 | ACC:       4099 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.PUSH | TICK:        790 | IP:         35 | DR       4098 | AR:       4098 | ACC:       4099 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.JUMP | TICK:        793 | IP:         28 | DR         28 | AR:       4098 | ACC:       4099 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:        798 | IP:         29 | DR        108 | AR:       4099 | ACC:        108 | SP:       8092
+  DEBUG   datapath:output        ki <- l
+  DEBUG   controlunit:microcode_handler INSTRUCTION    Opcode.PRINT | TICK:        801 | IP:         30 | DR        108 | AR:       4099 | ACC:        108 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.CMP | TICK:        804 | IP:         31 | DR          0 | AR:       4099 | ACC:        108 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.JE | TICK:        807 | IP:         32 | DR         36 | AR:       4099 | ACC:        108 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.POP | TICK:        812 | IP:         33 | DR       4099 | AR:       4099 | ACC:       4099 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.INC | TICK:        815 | IP:         34 | DR       4099 | AR:       4099 | ACC:       4100 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.PUSH | TICK:        818 | IP:         35 | DR       4099 | AR:       4099 | ACC:       4100 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.JUMP | TICK:        821 | IP:         28 | DR         28 | AR:       4099 | ACC:       4100 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:        826 | IP:         29 | DR        108 | AR:       4100 | ACC:        108 | SP:       8092
+  DEBUG   datapath:output        kil <- l
+  DEBUG   controlunit:microcode_handler INSTRUCTION    Opcode.PRINT | TICK:        829 | IP:         30 | DR        108 | AR:       4100 | ACC:        108 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.CMP | TICK:        832 | IP:         31 | DR          0 | AR:       4100 | ACC:        108 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.JE | TICK:        835 | IP:         32 | DR         36 | AR:       4100 | ACC:        108 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.POP | TICK:        840 | IP:         33 | DR       4100 | AR:       4100 | ACC:       4100 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.INC | TICK:        843 | IP:         34 | DR       4100 | AR:       4100 | ACC:       4101 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.PUSH | TICK:        846 | IP:         35 | DR       4100 | AR:       4100 | ACC:       4101 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.JUMP | TICK:        849 | IP:         28 | DR         28 | AR:       4100 | ACC:       4101 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:        854 | IP:         29 | DR        109 | AR:       4101 | ACC:        109 | SP:       8092
+  DEBUG   datapath:output        kill <- m
+  DEBUG   controlunit:microcode_handler INSTRUCTION    Opcode.PRINT | TICK:        857 | IP:         30 | DR        109 | AR:       4101 | ACC:        109 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.CMP | TICK:        860 | IP:         31 | DR          0 | AR:       4101 | ACC:        109 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.JE | TICK:        863 | IP:         32 | DR         36 | AR:       4101 | ACC:        109 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.POP | TICK:        868 | IP:         33 | DR       4101 | AR:       4101 | ACC:       4101 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.INC | TICK:        871 | IP:         34 | DR       4101 | AR:       4101 | ACC:       4102 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.PUSH | TICK:        874 | IP:         35 | DR       4101 | AR:       4101 | ACC:       4102 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.JUMP | TICK:        877 | IP:         28 | DR         28 | AR:       4101 | ACC:       4102 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:        882 | IP:         29 | DR        101 | AR:       4102 | ACC:        101 | SP:       8092
+  DEBUG   datapath:output        killm <- e
+  DEBUG   controlunit:microcode_handler INSTRUCTION    Opcode.PRINT | TICK:        885 | IP:         30 | DR        101 | AR:       4102 | ACC:        101 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.CMP | TICK:        888 | IP:         31 | DR          0 | AR:       4102 | ACC:        101 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.JE | TICK:        891 | IP:         32 | DR         36 | AR:       4102 | ACC:        101 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.POP | TICK:        896 | IP:         33 | DR       4102 | AR:       4102 | ACC:       4102 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.INC | TICK:        899 | IP:         34 | DR       4102 | AR:       4102 | ACC:       4103 | SP:       8093
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.PUSH | TICK:        902 | IP:         35 | DR       4102 | AR:       4102 | ACC:       4103 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION     Opcode.JUMP | TICK:        905 | IP:         28 | DR         28 | AR:       4102 | ACC:       4103 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.LD | TICK:        910 | IP:         29 | DR          0 | AR:       4103 | ACC:          0 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION    Opcode.PRINT | TICK:        913 | IP:         30 | DR          0 | AR:       4103 | ACC:          0 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.CMP | TICK:        916 | IP:         31 | DR          0 | AR:       4103 | ACC:          0 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION       Opcode.JE | TICK:        920 | IP:         36 | DR         36 | AR:       4103 | ACC:          0 | SP:       8092
+  DEBUG   controlunit:microcode_handler INSTRUCTION      Opcode.POP | TICK:        925 | IP:         37 | DR       4103 | AR:       4103 | ACC:       4103 | SP:       8093
+  DEBUG   datapath:output_the_buffer output: killme

@@ -12,7 +12,6 @@ def simulation(instructions: list[Instruction], memory_size: int, input_file: st
     assert tick_limit > 0, "Tick limit size should be non-zero"
     data_path = DataPath(MEMORY_SIZE, instructions, input_file)
     control_unit = ControlUnit(data_path, tick_limit)
-    logging.info("Simulation start")
     try:
         while control_unit.tick_counter < tick_limit:
             control_unit.process_tick()
@@ -21,7 +20,6 @@ def simulation(instructions: list[Instruction], memory_size: int, input_file: st
         logging.warning("Warning! The end of the buffer has been reached")
     except HaltError:
         data_path.device.output_the_buffer()
-        logging.info("%s", "Simulation stop")
 
     if control_unit.tick_counter >= tick_limit:
         logging.warning("Maximum ticks reached!")
@@ -37,6 +35,6 @@ if __name__ == "__main__":
         level=logging.DEBUG, filename="py.log", format="%(levelname)-7s %(module)s:%(funcName)-13s %(message)s"
     )
     logging.getLogger().setLevel(logging.DEBUG)
-    assert len(sys.argv) == 3, "Wrong arguments: translator.py <input_file> <target_file>"
+    assert len(sys.argv) == 3, "Wrong arguments: processor.py <input_file> <target_file>"
     _, source, target = sys.argv
     main(source, target)

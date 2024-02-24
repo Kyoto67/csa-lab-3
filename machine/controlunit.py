@@ -209,7 +209,7 @@ class ControlUnit:
         if sel == MicrocodeSelector.DECODE_COMMAND:
             self.microcode_ip = self.decoder.decode_command(self.data_path.cr)
         if sel == MicrocodeSelector.RESET:
-            logging.info(self.__repr__())
+            logging.debug(self.__repr__())
             self.microcode_ip = 0
 
     def check_flags(self):
