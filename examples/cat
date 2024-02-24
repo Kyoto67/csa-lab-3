@@ -1,8 +1,0 @@
-  int char = 0;
-  str text = '';
-  read(char);
-  while (char>0) {
-      text = text + char;
-      read(char);
-  }
-  print(text);
